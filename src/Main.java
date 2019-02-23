@@ -8,7 +8,7 @@ public class Main{
 public static void main(String[] args){
 
 
-        Ficha f1=new Ficha(0,0);
+        Ficha f1=new Ficha(0,6);
         Ficha f2=new Ficha (2,1);
         
         
@@ -45,12 +45,12 @@ public static void main(String[] args){
                 
         
         //metodo rotar
-       //7f1.rotarFicha();
-        //f2.rotarFicha();
+       f1.rotarFicha();
+       
         //llamar metodo de intercamiar 2 fichas
         //f1.intercambioFicha(f2, f2);
-        //System.out.println(f1.getPinta1()+":"+f1.getPinta2());
-        //System.out.println(f2.getPinta1()+":"+f2.getPinta2());
+        System.out.println(f1.getPinta1()+":"+f1.getPinta2());
+        System.out.println(f2.getPinta1()+":"+f2.getPinta2());
         //metodo sumar ficha
         /* f1.sumarFicha();
         f2.sumarFicha();
