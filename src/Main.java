@@ -1,4 +1,5 @@
 
+import java.security.SecureRandom;
 import java.util.ArrayList;
 
 
@@ -58,6 +59,28 @@ public static void main(String[] args){
         System.out.println(f1.getPinta1()+f1.getPinta2());
         System.out.println(f2.getPinta1()+f2.getPinta2());
         */
+        
+        SecureRandom ale =new SecureRandom();
+    ArrayList<Ficha> domino1= new ArrayList<>();
+    ArrayList<Ficha> domino2= new ArrayList<>();    
+    
+    for (int i = 0; i < 7; i++) {
+            int valor=ale.nextInt(dominoes.size());
+            Ficha n = dominoes.get(valor);
+            domino1.add(n);
+            dominoes.remove(valor);
+        }
+        
+     for (int i = 0; i < 7; i++) {
+            int val=ale.nextInt(dominoes.size());
+            Ficha x = dominoes.get(val);
+            domino2.add(x);
+            dominoes.remove(val); 
+        }
+      player pc= new player("pc", domino2);
+      player yo = new player("juego",domino1);
+       
+        }
 
 }
-}
+

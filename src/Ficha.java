@@ -1,16 +1,23 @@
-public class ficha {
-    //atributos
-    private  int pinta1,pinta2;
-    //constructor por default
-    public ficha(){
-    }
-    //constructor sobrecargado
-    public ficha(int x, int y){
-       this.pinta1=x;
-       this.pinta2=y;
+/**
+ *
+ * @author LENOVO
+ */
+public class Ficha {
+    
+    private int pinta1, pinta2;
+    //constructor por defecto
+    public Ficha(){
     }
     
-    //metodos get y set
+    //constructor sobrecargado
+    public Ficha(int v1, int v2){
+    
+        this.pinta1=v1;
+        this.pinta2=v2;
+    
+    }
+    
+
 
     public int getPinta1() {
         return pinta1;
@@ -27,32 +34,25 @@ public class ficha {
     public void setPinta2(int pinta2) {
         this.pinta2 = pinta2;
     }
-    
-    //metodo para rotar ficha
-    public void rotar(){
+
+    public void rotarFicha(){
+        
         int aux=this.pinta1;
         this.pinta1=this.pinta2;
         this.pinta2=aux;
-        
     }
     
-    //metodo para sumar points
-    public int sumar(){
-        int aux= this.pinta1+this.pinta2;   
+    public int sumarFicha(){
+    
+        int aux=this.pinta1+this.pinta2;
         return aux;
     }
     
-    //metodo intercambiar
-    public void intercambio(ficha n){
-        int aux= this.pinta1;
-        int temp=this.pinta2;
-     
-        this.pinta1=n.pinta1;
-        this.pinta2=n.pinta2;
-        n.pinta1=aux;
-        n.pinta2=temp;
+    public void intercambioFicha(Ficha x, Ficha y){
         
-    }
-    
-
+        Ficha aux;
+        aux=x;
+        x=y;
+        y=aux;  
+}
 }
