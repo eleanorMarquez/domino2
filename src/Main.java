@@ -6,6 +6,7 @@ import java.util.ArrayList;
 public class Main{
 
 
+
 public static void main(String[] args){
 
 
@@ -46,12 +47,12 @@ public static void main(String[] args){
                 
         
         //metodo rotar
-       f1.rotarFicha();
+       //f1.rotarFicha();
        
         //llamar metodo de intercamiar 2 fichas
         //f1.intercambioFicha(f2, f2);
-        System.out.println(f1.getPinta1()+":"+f1.getPinta2());
-        System.out.println(f2.getPinta1()+":"+f2.getPinta2());
+        //System.out.println(f1.getPinta1()+":"+f1.getPinta2());
+        //System.out.println(f2.getPinta1()+":"+f2.getPinta2());
         //metodo sumar ficha
         /* f1.sumarFicha();
         f2.sumarFicha();
@@ -59,16 +60,21 @@ public static void main(String[] args){
         System.out.println(f1.getPinta1()+f1.getPinta2());
         System.out.println(f2.getPinta1()+f2.getPinta2());
         */
+
         
         SecureRandom ale =new SecureRandom();
     ArrayList<Ficha> domino1= new ArrayList<>();
-    ArrayList<Ficha> domino2= new ArrayList<>();    
+    ArrayList<Ficha> domino2= new ArrayList<>(); 
+    
+  
     
     for (int i = 0; i < 7; i++) {
             int valor=ale.nextInt(dominoes.size());
             Ficha n = dominoes.get(valor);
             domino1.add(n);
+           
             dominoes.remove(valor);
+           
         }
         
      for (int i = 0; i < 7; i++) {

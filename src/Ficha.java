@@ -42,11 +42,7 @@ public class Ficha {
         this.pinta2=aux;
     }
     
-    public int sumarFicha(){
     
-        int aux=this.pinta1+this.pinta2;
-        return aux;
-    }
     
     public void intercambioFicha(Ficha x, Ficha y){
         
