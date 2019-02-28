@@ -16,9 +16,6 @@ public class Ficha {
         this.pinta2=v2;
     
     }
-    
-
-
     public int getPinta1() {
         return pinta1;
     }
@@ -42,7 +39,11 @@ public class Ficha {
         this.pinta2=aux;
     }
     
-    
+    //Buscar la ficha con mas puntos 
+    public int sumar(){
+        int aux= this.pinta1+this.pinta2;   
+        return aux;
+    }	
     
     public void intercambioFicha(Ficha x, Ficha y){
         
@@ -51,4 +52,8 @@ public class Ficha {
         x=y;
         y=aux;  
 }
+    
+    public String show(){
+   	return "|" + pinta1 + ":" + pinta2 + "|";	
+    }
 }

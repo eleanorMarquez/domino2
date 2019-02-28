@@ -12,14 +12,53 @@ import java.util.ArrayList;
  * @author LENOVO
  */
 public class player {
+
     private String nombre;
-private ArrayList<Ficha> mano = new ArrayList<>();
+    ArrayList<Ficha> mazo = new ArrayList<>();
+    //constructor por defecto
 
-public player (){
-}
+    public player() {
+    }
 
-public player (String nom, ArrayList man){
- this.nombre=nom;
- this.mano=man;
-}
+    //constructor sobrecargado
+    public player(String name) {
+        this.nombre = name;
+
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public ArrayList<Ficha> getMazo() {
+        return mazo;
+    }
+
+    public void addFicha(Ficha ficha) {
+
+        mazo.add(ficha);
+    }
+
+    public Ficha parAlto() {
+        int value = -1;
+        int index = -1;
+
+        for (int i = 0; i < mazo.size(); i++) {
+            if (mazo.get(i).getPinta1() == mazo.get(i).getPinta2() && mazo.get(i).getPinta1() > value) {
+                value = mazo.get(i).getPinta1();
+                index = i;
+            }
+
+        }
+        if(index == -1){
+            return null; }
+
+        return mazo.remove(index);
+        
+
+    }
+    
+    
+    //preguntarle al jugador que ficha quiere tirar 
+	
 }
