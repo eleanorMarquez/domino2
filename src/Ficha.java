@@ -1,21 +1,25 @@
+
 /**
  *
  * @author LENOVO
  */
 public class Ficha {
-    
-    private int pinta1, pinta2;
+
+    private int pinta1; //Derecha
+    private int pinta2; //Izquierda
+
     //constructor por defecto
-    public Ficha(){
+    public Ficha() {
     }
-    
+
     //constructor sobrecargado
-    public Ficha(int v1, int v2){
-    
-        this.pinta1=v1;
-        this.pinta2=v2;
-    
+    public Ficha(int v1, int v2) {
+
+        this.pinta1 = v1;
+        this.pinta2 = v2;
+
     }
+
     public int getPinta1() {
         return pinta1;
     }
@@ -32,28 +36,31 @@ public class Ficha {
         this.pinta2 = pinta2;
     }
 
-    public void rotarFicha(){
-        
-        int aux=this.pinta1;
-        this.pinta1=this.pinta2;
-        this.pinta2=aux;
+    public void rotarFicha() {
+
+        int aux = this.pinta1;
+        this.pinta1 = this.pinta2;
+        this.pinta2 = aux;
     }
-    
+
     //Buscar la ficha con mas puntos 
-    public int sumar(){
-        int aux= this.pinta1+this.pinta2;   
+    public int sumar() {
+        int aux = this.pinta1 + this.pinta2;
         return aux;
-    }	
-    
-    public void intercambioFicha(Ficha x, Ficha y){
-        
+    }
+
+    public void intercambioFicha(Ficha x, Ficha y) {
+
         Ficha aux;
-        aux=x;
-        x=y;
-        y=aux;  
-}
-    
-    public String show(){
-   	return "|" + pinta1 + ":" + pinta2 + "|";	
+        aux = x;
+        x = y;
+        y = aux;
+    }
+
+    public String show() {
+        
+        
+        return "|" + this.pinta1 + ":" + this.pinta2 + "|";
+        
     }
 }

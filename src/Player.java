@@ -6,22 +6,21 @@ import java.util.ArrayList;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author LENOVO
  */
-public class player {
+public class Player {
 
     private String nombre;
-    ArrayList<Ficha> mazo = new ArrayList<>();
+    private ArrayList<Ficha> mazo = new ArrayList<>();
     //constructor por defecto
 
-    public player() {
+    public Player() {
     }
 
     //constructor sobrecargado
-    public player(String name) {
+    public Player(String name) {
         this.nombre = name;
 
     }
@@ -39,6 +38,16 @@ public class player {
         mazo.add(ficha);
     }
 
+    public Ficha getFicha(int x) {
+        return mazo.remove(x);
+    }
+
+    public void showMazo() {
+        System.out.print(nombre + ":\t\t ");
+        mazo.forEach(temp -> System.out.print(temp.show()));
+
+    }
+
     public Ficha parAlto() {
         int value = -1;
         int index = -1;
@@ -50,15 +59,13 @@ public class player {
             }
 
         }
-        if(index == -1){
-            return null; }
+        if (index == -1) {
+            return null;
+        }
 
         return mazo.remove(index);
-        
 
     }
-    
-    
+
     //preguntarle al jugador que ficha quiere tirar 
-	
 }
