@@ -38,11 +38,11 @@ public class Mesa {
     }
           
     public int getFirst() {
-        return fichasEnJuego.get(0).getPinta1();
+        return fichasEnJuego.get(0).getIzquierdo();
     }
 
     public int getLast() {
-        return fichasEnJuego.get(fichasEnJuego.size() - 1).getPinta2();
+        return fichasEnJuego.get(fichasEnJuego.size() - 1).getDerecho();
     }
 
     // Validar que admite una ficha de ser necesario la rota
@@ -54,14 +54,13 @@ public class Mesa {
         fichasEnJuego.add(insert);    
     }
     public boolean ponerFichaInicio(Ficha ficha) {
-        if (ficha.getPinta1() == getFirst()) {
+        if (ficha.getDerecho() == getFirst()) {
             fichasEnJuego.add(0, ficha);
             return true;
         }
-        if (ficha.getPinta2() == getFirst()) {
-            fichasEnJuego.add(0, ficha);
+        if (ficha.getIzquierdo()== getFirst()) {
             ficha.rotarFicha();
-
+            fichasEnJuego.add(0, ficha);
             return true;
         }
         return false;
@@ -69,13 +68,13 @@ public class Mesa {
     }
 
     public boolean ponerFichaFinal(Ficha ficha) {
-        if (ficha.getPinta1() == getLast()) {
+        if (ficha.getDerecho()== getLast()) {
             fichasEnJuego.add(ficha);
             return true;
         }
-        if (ficha.getPinta2() == getLast()) {
-            fichasEnJuego.add(ficha);
+        if (ficha.getIzquierdo() == getLast()) {
             ficha.rotarFicha();
+            fichasEnJuego.add(ficha);
             return true;
         }
         return false;

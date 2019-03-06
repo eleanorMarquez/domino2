@@ -73,8 +73,9 @@ public class Main {
         //sacar la ficha inicial
         mesa.addFichaInicial(jugador1.getFicha(1));
         
-       
-        jugador2.getFicha(1);
+        Scanner scan = new Scanner(System.in);
+        
+           
         
         
         //preguntar en menu de opciones cual ficha desea poner
@@ -104,7 +105,10 @@ public class Main {
         jugador1.showMazo();
         System.out.println();
         jugador2.showMazo();
-        System.out.println();
+        mesa.show();
+        System.out.println(mesa.ponerFichaInicio(jugador2.getMazo().get(scan.nextInt())));
+        
+   
         mesa.show();
 
 //    int poner = 0;

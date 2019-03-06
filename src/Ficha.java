@@ -5,8 +5,8 @@
  */
 public class Ficha {
 
-    private int pinta1; //Derecha
-    private int pinta2; //Izquierda
+    private int Derecho; //Derecha
+    private int Izquierdo; //Izquierda
 
     //constructor por defecto
     public Ficha() {
@@ -15,44 +15,45 @@ public class Ficha {
     //constructor sobrecargado
     public Ficha(int v1, int v2) {
 
-        this.pinta1 = v1;
-        this.pinta2 = v2;
+        this.Derecho = v1;
+        this.Izquierdo = v2;
 
     }
 
-    public int getPinta1() {
-        return pinta1;
+    public int getDerecho() {
+        return this.Derecho;
     }
 
-    public void setPinta1(int pinta1) {
-        this.pinta1 = pinta1;
+    public void setDerecho(int Derecho) {
+        this.Derecho = Derecho;
     }
 
-    public int getPinta2() {
-        return pinta2;
+    public int getIzquierdo() {
+        return this.Izquierdo;
     }
 
-    public void setPinta2(int pinta2) {
-        this.pinta2 = pinta2;
+    public void setIzquierdo(int Izquierdo) {
+        this.Izquierdo = Izquierdo;
     }
 
     public void rotarFicha() {
 
-        int aux = this.pinta1;
-        this.pinta1 = this.pinta2;
-        this.pinta2 = aux;
+        int aux = this.Derecho;
+        this.Derecho = this.Izquierdo;
+        this.Izquierdo = aux;
+        
     }
 
     //Buscar la ficha con mas puntos 
     public int sumar() {
-        int aux = this.pinta1 + this.pinta2;
+        int aux = this.Derecho + this.Izquierdo;
         return aux;
     }
 
     public void intercambioFicha(Ficha x, Ficha y) {
 
-        Ficha aux;
-        aux = x;
+      
+      Ficha aux = x;
         x = y;
         y = aux;
     }
@@ -60,7 +61,7 @@ public class Ficha {
     public String show() {
         
         
-        return "|" + this.pinta1 + ":" + this.pinta2 + "|";
+        return "|" + this.Izquierdo + ":" + this.Derecho + "|";
         
     }
 }

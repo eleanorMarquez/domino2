@@ -53,8 +53,8 @@ public class Player {
         int index = -1;
 
         for (int i = 0; i < mazo.size(); i++) {
-            if (mazo.get(i).getPinta1() == mazo.get(i).getPinta2() && mazo.get(i).getPinta1() > value) {
-                value = mazo.get(i).getPinta1();
+            if (mazo.get(i).getDerecho()== mazo.get(i).getIzquierdo() && mazo.get(i).getDerecho()> value) {
+                value = mazo.get(i).getDerecho();
                 index = i;
             }
 
