@@ -80,13 +80,14 @@ public class Mesa {
         return false;
     }
 
-    public void show() {
-        System.out.print("Mesa :");
+    public void show(String x) {
+        System.out.print("Mesa:");
+       
 
         for (int i = 0; i < fichasEnJuego.size(); i++) {
             System.out.print(fichasEnJuego.get(i).show());
         }
-        System.out.println();
+        
     }
 
 }

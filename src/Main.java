@@ -63,7 +63,7 @@ public class Main {
         Mesa mesa = new Mesa();
         // Se crean los jugadores para mostrar su mazo
         Player jugador1 = new Player("Estrella");
-        Player jugador2 = new Player("Miller");
+        Player jugador2 = new Player("PC");
 
         // Repartir 7 fichas a cada jugador
         for (int i = 0; i < 7; i++) {
@@ -72,6 +72,7 @@ public class Main {
         }
         //sacar la ficha inicial
         mesa.addFichaInicial(jugador1.getFicha(1));
+        //mesa.addFichaInicial(jugador2.getFicha(1));
         
         Scanner scan = new Scanner(System.in);
         
@@ -105,11 +106,16 @@ public class Main {
         jugador1.showMazo();
         System.out.println();
         jugador2.showMazo();
-        mesa.show();
-        System.out.println(mesa.ponerFichaInicio(jugador2.getMazo().get(scan.nextInt())));
-        
+        System.out.println();
+        mesa.show("\n");
+                  
+
+          System.out.println(mesa.ponerFichaInicio(jugador2.getMazo().get(scan.nextInt())));
+//        System.out.println(mesa.ponerFichaInicio(jugador2.getMazo().get(scan.nextInt())));
+//        System.out.println(mesa.ponerFichaFinal(jugador1.getMazo().get(scan.nextInt())));
+//        System.out.println(mesa.ponerFichaFinal(jugador2.getMazo().get(scan.nextInt())));
    
-        mesa.show();
+        mesa.show("\n");
 
 //    int poner = 0;
 //        do {

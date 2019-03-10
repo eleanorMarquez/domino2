@@ -43,7 +43,7 @@ public class Player {
     }
 
     public void showMazo() {
-        System.out.print(nombre + ":\t\t ");
+        System.out.print(nombre + ":\n ");
         mazo.forEach(temp -> System.out.print(temp.show()));
 
     }
