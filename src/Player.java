@@ -43,8 +43,9 @@ public class Player {
     }
 
     public void showMazo() {
-        System.out.print(nombre + ":\n ");
+        System.out.println(nombre);
         mazo.forEach(temp -> System.out.print(temp.show()));
+        System.out.println();
 
     }
 
