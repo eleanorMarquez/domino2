@@ -71,8 +71,8 @@ public class Main {
             jugador2.addFicha(mesa.getFichaOculta());
         }
         //sacar la ficha inicial
-        mesa.addFichaInicial(jugador1.getFicha(1));
-        //mesa.addFichaInicial(jugador2.getFicha(1));
+        mesa.addFichaInicial(jugador1.getFicha(0));
+ 
         
         Scanner scan = new Scanner(System.in);
         

@@ -50,9 +50,30 @@ public class Mesa {
     		if (ficha.getValorDer() == getFirst || )
     	}*/
     // Validar que admite una ficha en un lado de la mesa y de ser necesario la rota
-    public void addFichaInicial(Ficha insert){
-        fichasEnJuego.add(insert);    
+    public void addFichaInicial(Ficha a){
+        fichasEnJuego.add(a);    
     }
+    
+    public void addSecond(Ficha b){
+       fichasEnJuego.add(b);
+    }
+    public void addthree(Ficha c){
+       fichasEnJuego.add(c);
+    }
+    public void addfouth(Ficha d){
+       fichasEnJuego.add(d);
+    }
+    public void addfive(Ficha e){
+       fichasEnJuego.add(e);
+    }
+    public void addSix(Ficha f){
+       fichasEnJuego.add(f);
+    }
+    public void addSeven(Ficha g){
+       fichasEnJuego.add(g);
+    }
+    
+    
     public boolean ponerFichaInicio(Ficha ficha) {
         if (ficha.getDerecho() == getFirst()) {
             fichasEnJuego.add(0, ficha);
@@ -81,11 +102,11 @@ public class Mesa {
     }
 
     public void show(String x) {
-        System.out.print("Mesa:");
+        System.out.print("Mesa:"+ "\n ");
        
 
         for (int i = 0; i < fichasEnJuego.size(); i++) {
-            System.out.print(fichasEnJuego.get(i).show());
+            System.out.print(fichasEnJuego.get(i).show()+"\t");
         }
         
     }

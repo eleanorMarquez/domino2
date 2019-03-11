@@ -7,7 +7,9 @@ PC:
 false
 Mesa:|4:1
 
-//mi amor solo sirve para que lo gire a la derecha con la ficha en al posicion derecha mas no la izquierda
+//mi amor solo sirve para que lo gire a la derecha con la ficha en al posicion derecha mas NO la IZQUIERDA
+______________________________________________________________________________________________________________
+//si ningun jugador tiene el mazo la ficha para lanzar osea ¡PASA! SE CERRÓ el juego y no hay GANADOR!
 //siempre recuerda que te QUIERO MUCHO
 
 Estrella:
