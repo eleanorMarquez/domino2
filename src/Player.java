@@ -28,10 +28,23 @@ public class Player {
     public String getNombre() {
         return nombre;
     }
-
+    public boolean jugadaPosible(int mesaFirst,int mesaLast){
+        for(int i = 0 ; i < this.getMazo().size() ;i++){
+            if(    this.getMazo().get(i).getDerecho() == mesaFirst ||
+                   this.getMazo().get(i).getIzquierdo() == mesaFirst ||
+                   this.getMazo().get(i).getDerecho() == mesaLast ||
+                   this.getMazo().get(i).getIzquierdo() == mesaLast ){
+                System.out.println("puedes jugar una ficha " + i);
+                return true;
+            }   
+        }
+        System.out.println("Jugador pasa");
+        return false;
+    }
     public ArrayList<Ficha> getMazo() {
         return mazo;
     }
+    
 
     public void addFicha(Ficha ficha) {
 
