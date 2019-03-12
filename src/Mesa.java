@@ -2,15 +2,6 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author LENOVO
- */
 public class Mesa {
 
     private ArrayList<Ficha> fichasOcultas = new ArrayList<Ficha>();
@@ -49,7 +40,7 @@ public class Mesa {
                 System.out.println("La ficha no se puede poner en este lugar");
                 return false;
             }
-        }else{
+        } else {
             if (this.ponerFichaFinal(jugador.getMazo().get(indiceFichaJugar))) {
                 System.out.println("La ficha se inserto correctamente");
                 jugador.getFicha(indiceFichaJugar);
@@ -66,37 +57,9 @@ public class Mesa {
         return fichasEnJuego.get(fichasEnJuego.size() - 1).getDerecho();
     }
 
-    // Validar que admite una ficha de ser necesario la rota
-    /*public boolean ponerFicha(Ficha ficha){
-    		if (ficha.getValorDer() == getFirst || )
-    	}*/
     // Validar que admite una ficha en un lado de la mesa y de ser necesario la rota
     public void addFichaInicial(Ficha a) {
         fichasEnJuego.add(a);
-    }
-
-    public void addSecond(Ficha b) {
-        fichasEnJuego.add(b);
-    }
-
-    public void addthree(Ficha c) {
-        fichasEnJuego.add(c);
-    }
-
-    public void addfouth(Ficha d) {
-        fichasEnJuego.add(d);
-    }
-
-    public void addfive(Ficha e) {
-        fichasEnJuego.add(e);
-    }
-
-    public void addSix(Ficha f) {
-        fichasEnJuego.add(f);
-    }
-
-    public void addSeven(Ficha g) {
-        fichasEnJuego.add(g);
     }
 
     public boolean ponerFichaInicio(Ficha ficha) {

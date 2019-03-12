@@ -1,8 +1,4 @@
 
-/**
- *
- * @author LENOVO
- */
 public class Ficha {
 
     private int Derecho; //Derecha
@@ -41,7 +37,7 @@ public class Ficha {
         int aux = this.Derecho;
         this.Derecho = this.Izquierdo;
         this.Izquierdo = aux;
-        
+
     }
 
     //Buscar la ficha con mas puntos 
@@ -52,16 +48,14 @@ public class Ficha {
 
     public void intercambioFicha(Ficha x, Ficha y) {
 
-      
-      Ficha aux = x;
+        Ficha aux = x;
         x = y;
         y = aux;
     }
 
     public String show() {
-        
-        
+
         return "|" + this.Izquierdo + ":" + this.Derecho + "|";
-        
+
     }
 }

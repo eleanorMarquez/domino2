@@ -1,15 +1,6 @@
 
 import java.util.ArrayList;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author LENOVO
- */
 public class Player {
 
     private String nombre;
@@ -28,23 +19,25 @@ public class Player {
     public String getNombre() {
         return nombre;
     }
-    public boolean jugadaPosible(int mesaFirst,int mesaLast){
-        for(int i = 0 ; i < this.getMazo().size() ;i++){
-            if(    this.getMazo().get(i).getDerecho() == mesaFirst ||
-                   this.getMazo().get(i).getIzquierdo() == mesaFirst ||
-                   this.getMazo().get(i).getDerecho() == mesaLast ||
-                   this.getMazo().get(i).getIzquierdo() == mesaLast ){
+
+    //Validar si el  jugador puede tirar una ficha y si le permite tirar que me muestre el indice de la ficha
+    public boolean jugadaPosible(int mesaFirst, int mesaLast) {
+        for (int i = 0; i < this.getMazo().size(); i++) {
+            if (this.getMazo().get(i).getDerecho() == mesaFirst
+                    || this.getMazo().get(i).getIzquierdo() == mesaFirst
+                    || this.getMazo().get(i).getDerecho() == mesaLast
+                    || this.getMazo().get(i).getIzquierdo() == mesaLast) {
                 System.out.println("puedes jugar una ficha " + i);
                 return true;
-            }   
+            }
         }
         System.out.println("Jugador pasa");
         return false;
     }
+
     public ArrayList<Ficha> getMazo() {
         return mazo;
     }
-    
 
     public void addFicha(Ficha ficha) {
 
@@ -67,7 +60,7 @@ public class Player {
         int index = -1;
 
         for (int i = 0; i < mazo.size(); i++) {
-            if (mazo.get(i).getDerecho()== mazo.get(i).getIzquierdo() && mazo.get(i).getDerecho()> value) {
+            if (mazo.get(i).getDerecho() == mazo.get(i).getIzquierdo() && mazo.get(i).getDerecho() > value) {
                 value = mazo.get(i).getDerecho();
                 index = i;
             }
@@ -80,6 +73,4 @@ public class Player {
         return mazo.remove(index);
 
     }
-
-    //preguntarle al jugador que ficha quiere tirar 
 }
