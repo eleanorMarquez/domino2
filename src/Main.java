@@ -1,11 +1,20 @@
 
 import java.util.Scanner;
+import java.util.InputMismatchException;
 //import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.*;
 
-public class Main {
 
+public class Main {
+	public static void cls(){
+		try {
+			new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+		}catch(Exception E) {
+			System.out.println(E);
+		}
+	}
+	
     public static void main(String[] args) {
 
 //        Ficha f1=new Ficha(0,6);
@@ -78,9 +87,55 @@ public class Main {
         
  
         
+        /*
+         * Aca Inicia el ciclo para poder controlar el juego
+         * 
+         * */
         Scanner scan = new Scanner(System.in);
+      
+        int n = 7;
+        for (int i = -3*n/2; i <= n; i++) {
+            for (int j = -3*n/2; j <= 3*n/2; j++) {
+                if ((Math.abs(i) + Math.abs(j) < n)
+                    || ((-n/2-i) * (-n/2-i) + ( n/2-j) * ( n/2-j) <= n*n/2)
+                    || ((-n/2-i) * (-n/2-i) + (-n/2-j) * (-n/2-j) <= n*n/2)) {
+                    System.out.print("* ");
+                }
+                else {
+                    System.out.print(". ");
+                }
+            }
+            System.out.println();
+        }
         
-           
+        
+        
+        jugador1.showMazo();
+        mesa.show();
+        System.out.print(jugador1.getNombre() + " para colocar ficha al inicio presione 1 de lo contrario 0:");
+		if(scan.nextInt() == 1 ){
+      		System.out.print("Colocara una ficha al inicio cual es el indice de la ficha a colocar ?:");
+      		Ficha temp = jugador1.getFicha(scan.nextInt());
+      		if(mesa.ponerFichaInicio(temp)) {
+      			System.out.println("La ficha se inserto correctamente");
+      		}else {
+      			jugador1.addFicha(temp);
+      			System.out.println("La ficha no se puede poner en este lugar");
+      		}
+      	}else {
+      		System.out.print("Colocara una ficha al final cual es el indice de la ficha a colocar ?:");
+      		Ficha temp = jugador1.getFicha(scan.nextInt());
+      		if(mesa.ponerFichaFinal(temp)) {
+      			System.out.println("La ficha se inserto correctamente");
+      		}else {
+      			jugador1.addFicha(temp);
+      			System.out.println("La ficha no se puede poner en este lugar");
+      		}
+      	}   
+		cls();
+      	jugador1.showMazo();
+      	mesa.show();
+        
         
         
         //preguntar en menu de opciones cual ficha desea poner
@@ -107,19 +162,19 @@ public class Main {
 //   	System.out.println(value);
 //   	
 //		Mesa.show();
-        jugador1.showMazo();
+        /*jugador1.showMazo();
         System.out.println();
         jugador2.showMazo();
         System.out.println();
-        mesa.show("\n");
-                  
+        mesa.show();
+                  */
 
-          System.out.println(mesa.ponerFichaInicio(jugador2.getMazo().get(scan.nextInt())));
+          //System.out.println(mesa.ponerFichaInicio(jugador2.getMazo().get(scan.nextInt())));
 //        System.out.println(mesa.ponerFichaInicio(jugador2.getMazo().get(scan.nextInt())));
 //        System.out.println(mesa.ponerFichaFinal(jugador1.getMazo().get(scan.nextInt())));
 //        System.out.println(mesa.ponerFichaFinal(jugador2.getMazo().get(scan.nextInt())));
    
-        mesa.show("\n");
+       // mesa.show();
 
 //    int poner = 0;
 //        do {
