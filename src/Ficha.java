@@ -40,8 +40,8 @@ public class Ficha {
 
     }
 
-    //Buscar la ficha con mas puntos 
-    public int sumar() {
+    //Buscar la ficha con mas pintas
+    public int sumarPintas() {
         int aux = this.Derecho + this.Izquierdo;
         return aux;
     }

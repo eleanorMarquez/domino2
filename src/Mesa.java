@@ -8,15 +8,6 @@ public class Mesa {
     private ArrayList<Ficha> fichasEnJuego = new ArrayList<Ficha>();
     Random randomGenerator = new Random();
 
-    public Mesa() {
-        for (int i = 0; i <= 6; i++) { //Se generan las 28 fichas del domino
-            for (int j = i; j <= 6; j++) {
-                Ficha temporal = new Ficha(i, j);
-                fichasOcultas.add(temporal);
-            }
-        }
-    }
-
     public ArrayList<Ficha> getFichas() {
         return fichasOcultas;
     }
@@ -28,6 +19,16 @@ public class Mesa {
 
     public int getFirst() {
         return fichasEnJuego.get(0).getIzquierdo();
+    }
+
+    //Se generan las 28 fichas del domino
+    public Mesa() {
+        for (int i = 0; i <= 6; i++) {
+            for (int j = i; j <= 6; j++) {
+                Ficha temporal = new Ficha(i, j);
+                fichasOcultas.add(temporal);
+            }
+        }
     }
 
     public boolean jugarFicha(Player jugador, int sitioJugar, int indiceFichaJugar) {
@@ -62,6 +63,7 @@ public class Mesa {
         fichasEnJuego.add(a);
     }
 
+    //Colocar la ficha al inicio de cada jugada
     public boolean ponerFichaInicio(Ficha ficha) {
         if (ficha.getDerecho() == getFirst()) {
             fichasEnJuego.add(0, ficha);
@@ -76,6 +78,7 @@ public class Mesa {
 
     }
 
+    //Colocar la ficha al final de cada jugada
     public boolean ponerFichaFinal(Ficha ficha) {
         if (ficha.getIzquierdo() == getLast()) {
             fichasEnJuego.add(ficha);
@@ -89,6 +92,7 @@ public class Mesa {
         return false;
     }
 
+    //mostrar la fichas que cada jugador me vaya generando en la mesa
     public void show() {
         System.out.println("Mesa:");
 

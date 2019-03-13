@@ -20,6 +20,19 @@ public class Player {
         return nombre;
     }
 
+    public ArrayList<Ficha> getMazo() {
+        return mazo;
+    }
+
+    public void addFicha(Ficha ficha) {
+
+        mazo.add(ficha);
+    }
+
+    public Ficha getFicha(int x) {
+        return mazo.remove(x);
+    }
+
     //Validar si el  jugador puede tirar una ficha y si le permite tirar que me muestre el indice de la ficha
     public boolean jugadaPosible(int mesaFirst, int mesaLast) {
         for (int i = 0; i < this.getMazo().size(); i++) {
@@ -33,19 +46,6 @@ public class Player {
         }
         System.out.println("Jugador pasa");
         return false;
-    }
-
-    public ArrayList<Ficha> getMazo() {
-        return mazo;
-    }
-
-    public void addFicha(Ficha ficha) {
-
-        mazo.add(ficha);
-    }
-
-    public Ficha getFicha(int x) {
-        return mazo.remove(x);
     }
 
     public void showMazo() {

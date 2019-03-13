@@ -31,8 +31,7 @@ public class Main {
         }
         //sacar la ficha inicial
         mesa.addFichaInicial(jugador2.getFicha(0));
-
-        /*int n = 7;
+        /*    int n = 7;
         for (int i = -3 * n / 2; i <= n; i++) {
             for (int j = -3 * n / 2; j <= 3 * n / 2; j++) {
                 if ((Math.abs(i) + Math.abs(j) < n)
