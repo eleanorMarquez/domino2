@@ -32,22 +32,36 @@ public class Player {
     public Ficha getFicha(int x) {
         return mazo.remove(x);
     }
-
-    //Validar si el  jugador puede tirar una ficha y si le permite tirar que me muestre el indice de la ficha
-    public boolean jugadaPosible(int mesaFirst, int mesaLast) {
-        for (int i = 0; i < this.getMazo().size(); i++) {
-            if (this.getMazo().get(i).getDerecho() == mesaFirst
-                    || this.getMazo().get(i).getIzquierdo() == mesaFirst
-                    || this.getMazo().get(i).getDerecho() == mesaLast
-                    || this.getMazo().get(i).getIzquierdo() == mesaLast) {
-                System.out.println("puedes jugar una ficha " + i);
-                return true;
-            }
-        }
-        System.out.println("Jugador pasa");
-        return false;
+    
+    public boolean fichaLanzable( int indexFichaLanzar, int numeroComparar ) {
+    	/*Verifica si una ficha en el mazo del jugador se puede colocar junnto
+    	 * al numero que viene en numero comparar*/
+    	if(this.getMazo().get(indexFichaLanzar).getDerecho() == numeroComparar ||
+    	   this.getMazo().get(indexFichaLanzar).getIzquierdo() == numeroComparar) {
+    		return true;
+    	}
+    	return false;
     }
+    
+    /*Validar si el  jugador puede tirar una fichaADerecha
+     *  Si se le pasa un numero diferente de -1 valida 
+     *  Si ese indice de ficha se puede lanzar
+     *  y lo retorna si la jugada es posible y si no 
+     *  es posible retorna -1.
+     *  Si se le pasa un -1 revisa todo el mazo y retorna el 
+     *  numero de la primera ficha a jugar en la derecha si
+     *  no existe retorna -1*/
+    public int mostrarJugadaPosible(int numeroEnMesa) {
 
+    		  for (int i = 0; i < this.getMazo().size(); i++) {
+    	            if (this.fichaLanzable(i , numeroEnMesa)){
+    	            	System.out.println("puedes jugar una ficha " + i );
+    	                return i;
+    	            }
+    	       }
+    	return -1;    		  
+    }
+    
     public void showMazo() {
         System.out.println(nombre);
         mazo.forEach(temp -> System.out.print(temp.show()));

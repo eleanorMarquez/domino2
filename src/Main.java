@@ -58,30 +58,10 @@ public class Main {
                 case 0:
                     //ciclo de control for continue con ingreso de datos en teclado
                     Scanner scan = new Scanner(System.in);
-                    for (int i = 0; i < 4; i++) {
-                        jugador1.showMazo();
-                        mesa.show();
-                        if (jugador1.jugadaPosible(mesa.getFirst(), mesa.getLast())) {
-                            System.out.print(jugador1.getNombre() + " para colocar ficha al inicio presione 1 de lo contrario 0:");
-                            int sitioJugar = scan.nextInt();
-                            System.out.print("coloque el indice de la ficha a jugar ?:");
-                            int indiceFichaJugar = scan.nextInt();
-
-                            mesa.jugarFicha(jugador1, sitioJugar, indiceFichaJugar);
-                        }
-                        jugador2.showMazo();
-                        mesa.show();
-                        if (jugador2.jugadaPosible(mesa.getFirst(), mesa.getLast())) {
-                            System.out.print(jugador2.getNombre() + " para colocar ficha al inicio presione 1 de lo contrario 0:");
-                            int sitioJugar = scan.nextInt();
-                            System.out.print("coloque el indice de la ficha a jugar ?:");
-                            int indiceFichaJugar = scan.nextInt();
-
-                            mesa.jugarFicha(jugador2, sitioJugar, indiceFichaJugar);
-                        }
-                        mesa.show();
-
-                    }
+                    mesa.show();  
+                    while(mesa.mecanicaJuego(jugador1) && mesa.mecanicaJuegoPC(jugador2)){
+                    	mesa.show();                        
+;                    }
                 case 1:
                     System.exit(0);
                 default:

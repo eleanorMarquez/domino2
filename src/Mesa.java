@@ -1,6 +1,7 @@
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Mesa {
 
@@ -91,7 +92,48 @@ public class Mesa {
         }
         return false;
     }
-
+    public boolean mecanicaJuego(Player jugador){
+    	Scanner scan = new Scanner(System.in);
+    	jugador.showMazo();
+    	if (jugador.mostrarJugadaPosible(this.getFirst()) > -1 ||
+    		jugador.mostrarJugadaPosible(this.getLast()) > -1) {
+    		/*Jugador puede lanzar ficha i al inicio o final*/
+    		
+    		int sitioJugar ;
+    		int indiceFichaJugar ;
+    		
+            do{
+            	System.out.print(jugador.getNombre() + " para colocar ficha al inicio presione 1 de lo contrario 0:");
+            	sitioJugar = scan.nextInt();
+                System.out.print("coloque el indice de la ficha a jugar ?:");
+                indiceFichaJugar = scan.nextInt();
+                
+            }while(!this.jugarFicha(jugador, sitioJugar, indiceFichaJugar));
+            
+            System.out.print("|||||||||||||||||||||||");
+            
+            this.show();
+            return true ;
+        }
+    	System.out.print(jugador.getNombre() +"Ya no puedes lanzar ninguna ficha fin juego");
+        return false;    	
+    }
+    public boolean mecanicaJuegoPC(Player jugador ){
+    	
+    	int jugadaADerecha = jugador.mostrarJugadaPosible(this.getLast()) ;
+    	int jugadaAIzquierda = jugador.mostrarJugadaPosible(this.getFirst()) ;
+    	if(jugadaADerecha == -1 && jugadaAIzquierda == -1) {
+    		System.out.print("El juego a  Finalizado");
+    		return false;
+    	}
+    	if(jugadaADerecha > -1) {
+    		this.jugarFicha(jugador,0, jugadaADerecha);
+    		return true ;
+    	}
+    	this.jugarFicha(jugador,1, jugadaAIzquierda);
+        this.show();
+        return true ;
+    }
     //mostrar la fichas que cada jugador me vaya generando en la mesa
     public void show() {
         System.out.println("Mesa:");
